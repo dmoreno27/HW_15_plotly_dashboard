@@ -87,8 +87,11 @@ function buildMetadata(sample) {
         }
       }],
       title: 'Belly Button Washing Frequency<br>Scrubs Per Week',
-      // height: 1000,
-      // width: 1000,
+      plot_bgcolor: "#f1f1f1",
+      paper_bgcolor: "#f1f1f1",
+
+      // height: 500,
+      width: 800,
       xaxis: {
         zeroline: false, showticklabels: false,
         showgrid: false, range: [-1, 1]
@@ -99,7 +102,7 @@ function buildMetadata(sample) {
       }
     };
 
-    Plotly.newPlot('gauge', data3, layout3);
+    Plotly.newPlot('gauge', data3, layout3, {responsive: true});
 
 
 
@@ -159,8 +162,12 @@ function buildCharts(sample) {
       }
     };
     var data1 = [trace1];
-    // var layout1 = { title: "Bubble Chart" };
-    Plotly.newPlot("bubble", data1);
+    var layout1 = { plot_bgcolor: "#f1f1f1",
+    paper_bgcolor: "#f1f1f1",
+    // height: 500,
+    width: 800
+   };
+    Plotly.newPlot("bubble", data1, layout1, {responsive: true});
 
 
     // @TODO: Build a Pie Chart
@@ -202,7 +209,12 @@ function buildCharts(sample) {
       textinfo: "percent"
     };
     var data2 = [trace2];
-    Plotly.newPlot("pie", data2);
+    var layout2 = {plot_bgcolor: "#f1f1f1",
+    paper_bgcolor: "#f1f1f1",
+    width: 800
+    // height: 500
+  }
+    Plotly.newPlot("pie", data2, layout2, {responsive: true});
 
   });
 };
